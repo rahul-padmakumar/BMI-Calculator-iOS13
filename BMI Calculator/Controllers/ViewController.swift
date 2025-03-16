@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var weightSlider: UISlider!
     @IBOutlet weak var heightSlider: UISlider!
     
+    var bmiValue: String?
+    
     @IBAction func onHeightChanged(_ sender: UISlider) {
         let height = String(format: "%.2f", sender.value)
         heightLabel.text = "\(height)m"
@@ -34,12 +36,18 @@ class ViewController: UIViewController {
     }
     @IBAction func onCalculatePressed(_ sender: UIButton) {
         let bmi = weightSlider.value / pow(heightSlider.value, 2)
-        
-        let secondVC = SecondViewController()
-        secondVC.bmiValue = String(format: "%.1f", bmi)
-        self.present(secondVC, animated: true)
+        bmiValue = String(format: "%.1f", bmi)
+        self.performSegue(withIdentifier: "showResult", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResult"{
+            let uiController = segue.destination as? ResultsViewController
+            if bmiValue != nil{
+                uiController?.bmiValue = bmiValue!
+            }
+        }
+    }
 
 }
 
