@@ -11,14 +11,19 @@ import UIKit
 class ResultsViewController: UIViewController {
     
     var bmiValue: String?
+    var infoTxt: String?
+    var color: UIColor?
 
     @IBOutlet weak var bmiLabel: UILabel!
+    @IBOutlet weak var infoTxtLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         bmiLabel?.text = bmiValue
+        infoTxtLabel?.text = infoTxt
+        view.backgroundColor = color
     }
     
     @IBAction func onRecalculatePressed(_ sender: UIButton) {

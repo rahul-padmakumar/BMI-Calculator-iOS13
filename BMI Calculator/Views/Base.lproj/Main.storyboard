@@ -210,6 +210,7 @@
                     <navigationItem key="navigationItem" id="JwU-vH-7Yg"/>
                     <connections>
                         <outlet property="bmiLabel" destination="VU9-2W-Sd5" id="8LE-KS-Kuc"/>
+                        <outlet property="infoTxtLabel" destination="9IV-CT-mxw" id="atw-7W-Yfs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fn-rV-g4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
